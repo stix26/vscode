@@ -57,6 +57,17 @@ Many of the core components and extensions to VS Code live in their own reposito
 
 VS Code includes a set of built-in extensions located in the [extensions](extensions) folder, including grammars and snippets for many languages. Extensions that provide rich language support (code completion, Go to Definition) for a language have the suffix `language-features`. For example, the `json` extension provides coloring for `JSON` and the `json-language-features` extension provides rich language support for `JSON`.
 
+## Linux prerequisites
+
+When building Code - OSS on Linux, several system libraries are required so that native Node.js modules can compile correctly. On Debian/Ubuntu based distributions you can install them using:
+
+```bash
+sudo apt-get update
+sudo apt-get install -y build-essential pkg-config libx11-dev libx11-xcb-dev libxkbfile-dev libsecret-1-dev libnotify-bin libkrb5-dev
+```
+
+These packages match the setup used in the project's CI configuration and are needed before running `npm ci`.
+
 ## Development Container
 
 This repository includes a Visual Studio Code Dev Containers / GitHub Codespaces development container.
